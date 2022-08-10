@@ -1,0 +1,74 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scenes/BackgroundLine.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Pallet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Goal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Border.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Ball.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Resources/DefauitBallData.tres" type="Resource" id=6]
+[ext_resource path="res://Scripts/GameWorld.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/ScoreBoard.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Resources/PlayerPalletData.tres" type="Resource" id=10]
+[ext_resource path="res://Resources/EasyPalletData.tres" type="Resource" id=11]
+[ext_resource path="res://Scenes/GameEndMenu.tscn" type="PackedScene" id=12]
+
+[node name="GameWorld" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="ScoreBoard" parent="." instance=ExtResource( 8 )]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+margin_left = 160.0
+margin_right = 160.0
+
+[node name="BackgroundLine" parent="." instance=ExtResource( 1 )]
+position = Vector2( 160, 90 )
+scale = Vector2( -0.301268, -0.301268 )
+region_rect = Rect2( 296, 416.182, 24, 595.818 )
+
+[node name="Border_Down" parent="." instance=ExtResource( 4 )]
+position = Vector2( 160, 180 )
+scale = Vector2( 0.094, 0.01 )
+
+[node name="Border_Up" parent="." instance=ExtResource( 4 )]
+position = Vector2( 160, 0 )
+scale = Vector2( 0.094, 0.01 )
+
+[node name="Pallet_Left" parent="." instance=ExtResource( 2 )]
+position = Vector2( 11, 90 )
+scale = Vector2( 0.08, 0.08 )
+palletData = ExtResource( 10 )
+
+[node name="Pallet_Right" parent="." instance=ExtResource( 2 )]
+position = Vector2( 310, 90 )
+scale = Vector2( 0.08, 0.08 )
+direction = 1
+palletData = ExtResource( 11 )
+
+[node name="Ball" parent="." instance=ExtResource( 5 )]
+position = Vector2( 160, 90 )
+scale = Vector2( 0.140045, 0.140045 )
+ballData = ExtResource( 6 )
+
+[node name="Goal_Left" parent="." instance=ExtResource( 3 )]
+position = Vector2( -17, 90 )
+
+[node name="Goal_Right" parent="." instance=ExtResource( 3 )]
+position = Vector2( 337, 90 )
+
+[node name="PauseMenu" parent="." instance=ExtResource( 9 )]
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 320.0
+margin_bottom = 180.0
+
+[node name="GameEndMenu" parent="." instance=ExtResource( 12 )]
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 320.0
+margin_bottom = 180.0
+
+[editable path="Border_Down"]
+[editable path="Border_Up"]

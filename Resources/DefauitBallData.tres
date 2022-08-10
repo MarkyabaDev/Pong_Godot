@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/BallDataResource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+initialSpeed = 100.0
+waitTimeInSeconds = 2.0
+rangeOfRandomXVelocity = 100.0
+maximumSpeed = 300.0
+speedIncreaseValue = 10.0
