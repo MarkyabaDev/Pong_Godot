@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource( 1 )
 isPlayer = false
-speed = 75.0
+speed = 60.0
